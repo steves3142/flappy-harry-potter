@@ -17,7 +17,7 @@
 
 ### ***Credits***
 
-##### Images: [DuckDuckGo Search]([[http://www.duckduckgo.com](https://th.bing.com/th/id/OIP.kU0IETUqvl8C-_wuglGx-gHaQC?pid=ImgDet&rs=1)](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F34%2F76%2Ff0%2F3476f0384d03f465c4c022b38f0fd716.jpg&f=1&nofb=1))
+##### Images: [DuckDuckGo Search](https://th.bing.com/th/id/OIP.kU0IETUqvl8C-_wuglGx-gHaQC?pid=ImgDet&rs=1)
 
 ##### Images: [DuckDuckGo Search](https://i.etsystatic.com/30347444/r/il/bf1cdb/3184155298/il_fullxfull.3184155298_2ipz.jpg)
 
