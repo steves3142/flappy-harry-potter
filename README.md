@@ -1,5 +1,6 @@
 # ***Flappy Harry Potter***
-### This is a spin on the classic game flappy bird 
+### This is a spin on the classic game flappy bird
+![](https://i.etsystatic.com/30347444/r/il/bf1cdb/3184155298/il_fullxfull.3184155298_2ipz.jpg) 
 ***
 
 
