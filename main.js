@@ -16,8 +16,10 @@ let restart = false
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  ctx.fillRect(10, canvas.height - 90, 50, 50)
-  requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
+  //ctx.fillRect(10, canvas.height - 90, 50, 50)
+  harry.update() 
+  harry.draw()
+  requestAnimationFrame(animate); //consider redoing for hogwarts backdrop
 }
 animate()
 
