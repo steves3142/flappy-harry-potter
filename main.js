@@ -17,22 +17,23 @@ let restart = false
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   //ctx.fillRect(10, canvas.height - 90, 50, 50)
-  harry.update() 
+  handleObstacles()
+  harry.update()
   harry.draw()
-  requestAnimationFrame(animate); //consider redoing for hogwarts backdrop
+  requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
+  frame++
 }
 animate()
 
 //Event Listeners
-window.addEventListener('keydown', function(e) {
+window.addEventListener('keydown', function (e) {
   if (e.code === 'Space') spacePressed = true
-  temp++
 })
-window.addEventListener('keyup', function(e) {
+window.addEventListener('keyup', function (e) {
   if (e.code === 'Space') spacePressed = false
 })
 
 ///For Menu
-document.addEventListener('click', () => gamePlaying = true)
-document.addEventListener('click', () => gameDirections = true)
-document.addEventListener('click', () => restart = true)
+document.addEventListener('click', () => (gamePlaying = true))
+document.addEventListener('click', () => (gameDirections = true))
+document.addEventListener('click', () => (restart = true))

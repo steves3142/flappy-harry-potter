@@ -26,6 +26,4 @@
 
 ##### Images: [DuckDuckGo Search](https://i.etsystatic.com/30347444/r/il/bf1cdb/3184155298/il_fullxfull.3184155298_2ipz.jpg)
 
-https://codepen.io/ju-az/pen/eYJQwLx/
-
 ---
