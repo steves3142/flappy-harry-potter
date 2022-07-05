@@ -6,6 +6,10 @@
 
 ---
 
+## Description
+
+Play as Harry Potter in this EPIC game as you maneuver him on his broom stick around treacherous obstacles. Press or hold the SPACE button to move harry up and down to avoid colliding into a column. Help him reach the Ministry of Magic to stop an infiltration and defeat Lord Voldemort.
+
 ## Figma Wireframe
 
 ## [Figma](https://www.figma.com/file/uShfOQwFtMyl6LzNc6gGo0/Flappy-Bird?node-id=0%3A3)
