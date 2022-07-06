@@ -1,4 +1,4 @@
-#canvas1 {
+    #canvas1 {
     position: absolute;
     top: 50%;
     left: 50%; 
@@ -6,4 +6,9 @@
     width: 600px;
     height: 400px; 
     border: 2px solid black; 
+}
+
+body {
+    background-repeat: repeat-x;
+      
 }

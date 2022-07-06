@@ -40,7 +40,7 @@ function handleObstacles() {
   obstaclesArray.forEach((element) => {
     element.update() //rectangle will be drawn
   })
-  if (obstaclesArray.length > 1) {
+  if (obstaclesArray.length > 10) {
     obstaclesArray.pop(obstaclesArray[0])
   }
   //console.log(obstaclesArray.length)
