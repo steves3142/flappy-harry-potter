@@ -67,16 +67,20 @@ function handleCollisions() {
     let yPosHarry = harry.yPosition()
     //console.log(yPosHarry)
     //console.log(yDistanceBot)
-    console.log(yDistanceTop)
+    //console.log(yDistanceTop)
     if (yPosHarry >= yDistanceBot && xPosHarry == xDistance) {
       //Game Over
       console.log('Game Over')
-    } else if (yPosHarry <= yDistanceTop && xPosHarry == xDistance ) {
+    } else if (yPosHarry <= yDistanceTop && xPosHarry == xDistance) {
       //Game Over
-      console.log('Game Over')      
-    }
-    else 
-    {
+      console.log('Game Over')
+    } else if (yPosHarry <= yDistanceTop && xPosHarry - 20 == xDistance) {
+      //Game Over
+      console.log('Game Over')
+    } else if (yPosHarry >= yDistanceBot && xPosHarry - 20 == xDistance) {
+      //Game Over
+      console.log('Game Over')
+    } else {
       //console.log('Stay clear from the columns!')
     }
   })
