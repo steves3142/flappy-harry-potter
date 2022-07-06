@@ -8,7 +8,9 @@
     border: 2px solid black; 
 }
 
-body {
-    background-repeat: repeat-x;
+.background-images{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
       
 }

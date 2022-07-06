@@ -61,7 +61,7 @@ function handleCollisions() {
     //yDistanceBot -= harry.yPosition() //subtract to find relative distance could be (+/-)
     yDistanceTop = element.topHeight()
     //yDistanceTop -= harry.yPosition() + harry.sideLength() //subtract to find relative distance could be (+/-)
-
+ 
     //console.log(xDistance)
     let xPosHarry = harry.xPosition()
     let yPosHarry = harry.yPosition()
