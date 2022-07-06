@@ -3,16 +3,20 @@ const ctx = canvas.getContext('2d')
 canvas.width = 600
 canvas.height = 400
 
-//Global variables for game
+//GLOBALS VARIABLES
 
 let spacePressed = false
 let hue = 0 //color spectrum
 let frame = 0
 let score = 0
-let gamespeed = 2
+let gamespeed = 2 //Toggle speed to increase difficulty
 let gamePlaying = false
 let gameDirections = false
 let restart = false
+
+//Globals for tracking score
+let currentScore = 0
+let bestScore = 0
 
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -20,6 +24,7 @@ function animate() {
   handleObstacles()
   harry.update()
   harry.draw()
+  handleCollisions()
   requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
   frame++
 }

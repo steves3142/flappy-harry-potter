@@ -29,5 +29,14 @@ class Harry {
     flap(){
         this.vy -= 2; 
     }
+    xPosition() {
+        return this.x;
+    }
+    yPosition() {
+        return this.y;
+    }
+    sideLength() {
+        return this.width; 
+    }
 }
 const harry = new Harry()
