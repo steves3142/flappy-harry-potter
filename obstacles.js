@@ -20,10 +20,10 @@ class Obstacle {
   xPosition() {
     return this.x
   }
-  yTopPosition() {
+  topHeight() {
     return this.top
   }
-  yBotPosiiton() {
+  botHeight() {
     return this.bottom
   }
 }
@@ -40,7 +40,7 @@ function handleObstacles() {
   obstaclesArray.forEach((element) => {
     element.update() //rectangle will be drawn
   })
-  if (obstaclesArray.length > 10) {
+  if (obstaclesArray.length > 1) {
     obstaclesArray.pop(obstaclesArray[0])
   }
   //console.log(obstaclesArray.length)
@@ -56,19 +56,28 @@ function handleCollisions() {
   let yDistanceTop = 0
   obstaclesArray.forEach((element) => {
     xDistance = element.xPosition()
-    xDistance -= harry.xPosition() + harry.sideLength() //subtract to find relative distance could be (+/-)
-    yDistanceBot = element.yBotPosiiton()
-    yDistanceBot -= harry.yPosition() //subtract to find relative distance could be (+/-)
-    yDistanceTop = element.yTopPosition()
-    yDistanceTop -= harry.yPosition() + harry.sideLength() //subtract to find relative distance could be (+/-)
+    //xDistance -= harry.xPosition() + harry.sideLength() //subtract to find relative distance could be (+/-)
+    yDistanceBot = canvas.height - element.botHeight()
+    //yDistanceBot -= harry.yPosition() //subtract to find relative distance could be (+/-)
+    yDistanceTop = element.topHeight()
+    //yDistanceTop -= harry.yPosition() + harry.sideLength() //subtract to find relative distance could be (+/-)
 
-    console.log(xDistance)
-    if (yDistanceBot >= 0 && yDistanceTop >= 0) {
+    //console.log(xDistance)
+    let xPosHarry = harry.xPosition()
+    let yPosHarry = harry.yPosition()
+    //console.log(yPosHarry)
+    //console.log(yDistanceBot)
+    console.log(yDistanceTop)
+    if (yPosHarry >= yDistanceBot && xPosHarry == xDistance) {
       //Game Over
       console.log('Game Over')
-    } else {
+    } else if (yPosHarry <= yDistanceTop && xPosHarry == xDistance ) {
       //Game Over
-      //console.log('Game Over')
+      console.log('Game Over')      
+    }
+    else 
+    {
+      //console.log('Stay clear from the columns!')
     }
   })
 }
