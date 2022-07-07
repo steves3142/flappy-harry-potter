@@ -11,9 +11,8 @@ let hue = 0 //color spectrum
 let frame = 0
 let score = 0
 let gamespeed = 2 //Toggle speed to increase difficulty
-let gamePlaying = false;
+let gamePlaying = true
 let gameDirections = false
-let arg = gamePlaying
 
 const harryPotterPNG = new Image()
 harryPotterPNG.src = 'harryicon.png'
@@ -35,7 +34,8 @@ const updateScore = () => {
 function animate() {
   currentScore = 0 //current score always initialized to zero at start of game
   //ctx.fillRect(10, canvas.height - 90, 50, 50)
-  console.log(gamePlaying)
+
+  //console.log(gamePlaying)
   if (gamePlaying) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     handleObstacles()
@@ -44,6 +44,7 @@ function animate() {
     handleCollisions()
     requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
     frame++
+    //console.log(currentScore)
     updateScore()
   }
 }
@@ -51,14 +52,15 @@ function animate() {
 animate()
 
 //Update Scores
-document.getElementById('best-score').innerHTML = `Best : ${bestScore}`
-document.getElementById('current-score').innerHTML = `Current : ${currentScore}`
+document.getElementById('best-score').innerText = `Best : ${bestScore}`
+document.getElementById('current-score').innerText = `Current : ${currentScore}`
 
 ///Menu Event Listeners
-buttons[1].addEventListener('click', () => {
+buttons[1].addEventListener('click', (gamePlaying) => {
   gamePlaying = true
-  console.log(`I'm working! ${gamePlaying}`)
-  return gamePlaying
+  //console.log(`I'm working! ${gamePlaying}`)
+
+  // return gamePlaying
 })
 buttons[0].addEventListener('click', () => {
   gameDirections = true
@@ -72,3 +74,5 @@ window.addEventListener('keydown', function (e) {
 window.addEventListener('keyup', function (e) {
   if (e.code === 'Space') spacePressed = false
 })
+
+document.addEventListener('click', () => (gamePlaying = true))

@@ -35,15 +35,29 @@ class Obstacle {
   }
 }
 
+function pointAccumulator(arg) {
+  objectX = arg.xPosition()
+  harryX = harry.xPosition()
+  if (objectX < harryX) {
+    console.log('currentScore')
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
 function handleObstacles() {
   //Add new obstacle for every 50 frames
   //Toggle frame to change difficulty level
   if (frame % 50 === 0) {
     obstaclesArray.unshift(new Obstacle())
   }
+
   //Add new obstacle
   obstaclesArray.forEach((element) => {
     element.update() //rectangle will be drawn
+    currentScore += pointAccumulator(element) //Did the player pass the obstacle?
   })
   if (obstaclesArray.length > 10) {
     obstaclesArray.pop(obstaclesArray[0])
@@ -78,6 +92,6 @@ function handleCollisions() {
     } else if (yPosHarry >= yDistanceBot && xPosHarry - 20 == xDistance) {
       //Game Over
       gamePlaying = false
-    } 
+    }
   })
 }
