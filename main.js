@@ -65,7 +65,7 @@ animate()
 ///Menu Event Listeners
 buttons[1].addEventListener('click', (gamePlaying) => {
   gamePlaying = true
-})
+}) 
 buttons[0].addEventListener('click', () => {
   gameDirections = true
   alert('Click the SPACE bar to move our hero up and down over the obstacles.')
