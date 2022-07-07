@@ -38,7 +38,7 @@ function animate() {
   //console.log(gamePlaying)
   if (gamePlaying) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    handleObstacles()
+    handleObstacles(currentScore)
     harry.update()
     harry.draw()
     handleCollisions()
@@ -52,8 +52,8 @@ function animate() {
 animate()
 
 //Update Scores
-document.getElementById('best-score').innerText = `Best : ${bestScore}`
-document.getElementById('current-score').innerText = `Current : ${currentScore}`
+document.getElementById('best-score').innerHTML = `Best : ${bestScore}`
+document.getElementById('current-score').innerHTML = `Current : ${currentScore}`
 
 ///Menu Event Listeners
 buttons[1].addEventListener('click', (gamePlaying) => {
