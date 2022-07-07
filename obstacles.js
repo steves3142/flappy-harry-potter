@@ -6,12 +6,13 @@ class Obstacle {
     this.bottom = (Math.random() * canvas.height) / 3 + 20
     this.x = canvas.width
     this.width = 20
-    //this.color = 'hsl(' + '100%, 50%'; //Rectangle color
   }
   draw() {
-    //ctx.fillStyle = this.color;
+    ctx.fillStyle = 'white';
     ctx.fillRect(this.x, 0, this.width, this.top) //top pipe
     ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom) //bottom pipe
+    ctx.drawImage(columnJPG, this.x, 0, this.width, this.top)
+    ctx.drawImage(columnJPG, this.x, canvas.height - this.bottom, this.width, this.top)
   }
   update() {
     this.x -= gamespeed
