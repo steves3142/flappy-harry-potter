@@ -18,3 +18,15 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+    padding: 8x 6px; 
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

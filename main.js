@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas1')
 const ctx = canvas.getContext('2d')
+const buttons = document.querySelectorAll('button')
 canvas.width = 600
 canvas.height = 400
 
@@ -10,9 +11,9 @@ let hue = 0 //color spectrum
 let frame = 0
 let score = 0
 let gamespeed = 2 //Toggle speed to increase difficulty
-let gamePlaying = false
+let gamePlaying = false;
 let gameDirections = false
-let restart = false
+let arg = gamePlaying
 
 const harryPotterPNG = new Image()
 harryPotterPNG.src = 'harryicon.png'
@@ -24,12 +25,8 @@ columnJPG.src = 'column.jpg'
 let currentScore
 let bestScore = 0
 
-///For Menu
-document.addEventListener('click', () => (gamePlaying = true))
-document.addEventListener('click', () => (gameDirections = true))
-document.addEventListener('click', () => (restart = true))
-
-const scoreCompare = () => {
+//Functions
+const updateScore = () => {
   if (currentScore > bestScore) {
     bestScore = currentScore
   }
@@ -37,27 +34,41 @@ const scoreCompare = () => {
 
 function animate() {
   currentScore = 0 //current score always initialized to zero at start of game
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
   //ctx.fillRect(10, canvas.height - 90, 50, 50)
-  handleObstacles()
-  harry.update()
-  harry.draw()
-  handleCollisions()
-  requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
-  frame++
-  scoreCompare()
+  console.log(gamePlaying)
+  if (gamePlaying) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    handleObstacles()
+    harry.update()
+    harry.draw()
+    handleCollisions()
+    requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
+    frame++
+    updateScore()
+  }
 }
 
+animate()
 
-if (gamePlaying) {
-  animate()
-}
-  //Event Listeners
+//Update Scores
+document.getElementById('best-score').innerHTML = `Best : ${bestScore}`
+document.getElementById('current-score').innerHTML = `Current : ${currentScore}`
+
+///Menu Event Listeners
+buttons[1].addEventListener('click', () => {
+  gamePlaying = true
+  console.log(`I'm working! ${gamePlaying}`)
+  return gamePlaying
+})
+buttons[0].addEventListener('click', () => {
+  gameDirections = true
+  console.log('Place Directions Here')
+})
+
+//Window Event Listeners
 window.addEventListener('keydown', function (e) {
   if (e.code === 'Space') spacePressed = true
 })
 window.addEventListener('keyup', function (e) {
   if (e.code === 'Space') spacePressed = false
 })
-
-
