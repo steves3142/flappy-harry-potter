@@ -14,6 +14,9 @@ let gamePlaying = false
 let gameDirections = false
 let restart = false
 
+const harryPotterPNG = new Image(); 
+harryPotterPNG.src = 'harryicon.png';
+
 //Globals for tracking score
 let currentScore = 0
 let bestScore = 0
