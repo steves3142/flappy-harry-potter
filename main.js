@@ -21,10 +21,22 @@ const columnJPG = new Image()
 columnJPG.src = 'column.jpg'
 
 //Globals for tracking score
-let currentScore = 0
+let currentScore
 let bestScore = 0
 
+///For Menu
+document.addEventListener('click', () => (gamePlaying = true))
+document.addEventListener('click', () => (gameDirections = true))
+document.addEventListener('click', () => (restart = true))
+
+const scoreCompare = () => {
+  if (currentScore > bestScore) {
+    bestScore = currentScore
+  }
+}
+
 function animate() {
+  currentScore = 0 //current score always initialized to zero at start of game
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   //ctx.fillRect(10, canvas.height - 90, 50, 50)
   handleObstacles()
@@ -33,10 +45,14 @@ function animate() {
   handleCollisions()
   requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
   frame++
+  scoreCompare()
 }
-animate()
 
-//Event Listeners
+
+if (gamePlaying) {
+  animate()
+}
+  //Event Listeners
 window.addEventListener('keydown', function (e) {
   if (e.code === 'Space') spacePressed = true
 })
@@ -44,7 +60,4 @@ window.addEventListener('keyup', function (e) {
   if (e.code === 'Space') spacePressed = false
 })
 
-///For Menu
-document.addEventListener('click', () => (gamePlaying = true))
-document.addEventListener('click', () => (gameDirections = true))
-document.addEventListener('click', () => (restart = true))
+

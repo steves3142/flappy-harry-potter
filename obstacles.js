@@ -8,11 +8,17 @@ class Obstacle {
     this.width = 20
   }
   draw() {
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = 'white'
     ctx.fillRect(this.x, 0, this.width, this.top) //top pipe
     ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom) //bottom pipe
     ctx.drawImage(columnJPG, this.x, 0, this.width, this.top)
-    ctx.drawImage(columnJPG, this.x, canvas.height - this.bottom, this.width, this.top)
+    ctx.drawImage(
+      columnJPG,
+      this.x,
+      canvas.height - this.bottom,
+      this.width,
+      this.top
+    )
   }
   update() {
     this.x -= gamespeed
@@ -29,12 +35,10 @@ class Obstacle {
   }
 }
 
-//const obstacle = new Obstacle()
-
 function handleObstacles() {
   //Add new obstacle for every 50 frames
   //Toggle frame to change difficulty level
-  if (frame % 500 === 0) {
+  if (frame % 50 === 0) {
     obstaclesArray.unshift(new Obstacle())
   }
   //Add new obstacle
@@ -44,8 +48,7 @@ function handleObstacles() {
   if (obstaclesArray.length > 10) {
     obstaclesArray.pop(obstaclesArray[0])
   }
-  //console.log(obstaclesArray.length)
-  //console.log(obstaclesArray)
+
   //Check bird-rectangle collision by checking edges
   //calculate the distance of each object to bird
   //calculate the distance of each object's corner to each bird
@@ -57,32 +60,24 @@ function handleCollisions() {
   let yDistanceTop = 0
   obstaclesArray.forEach((element) => {
     xDistance = element.xPosition()
-    //xDistance -= harry.xPosition() + harry.sideLength() //subtract to find relative distance could be (+/-)
     yDistanceBot = canvas.height - element.botHeight()
-    //yDistanceBot -= harry.yPosition() //subtract to find relative distance could be (+/-)
     yDistanceTop = element.topHeight()
-    //yDistanceTop -= harry.yPosition() + harry.sideLength() //subtract to find relative distance could be (+/-)
- 
-    //console.log(xDistance)
+
     let xPosHarry = harry.xPosition()
     let yPosHarry = harry.yPosition()
-    //console.log(yPosHarry)
-    //console.log(yDistanceBot)
-    //console.log(yDistanceTop)
+
     if (yPosHarry >= yDistanceBot && xPosHarry == xDistance) {
       //Game Over
-      console.log('Game Over')
+      gamePlaying = false
     } else if (yPosHarry <= yDistanceTop && xPosHarry == xDistance) {
       //Game Over
-      console.log('Game Over')
+      gamePlaying = false
     } else if (yPosHarry <= yDistanceTop && xPosHarry - 20 == xDistance) {
       //Game Over
-      console.log('Game Over')
+      gamePlaying = false
     } else if (yPosHarry >= yDistanceBot && xPosHarry - 20 == xDistance) {
       //Game Over
-      console.log('Game Over')
-    } else {
-      //console.log('Stay clear from the columns!')
-    }
+      gamePlaying = false
+    } 
   })
 }
