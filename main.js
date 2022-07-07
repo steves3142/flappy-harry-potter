@@ -21,7 +21,7 @@ const columnJPG = new Image()
 columnJPG.src = 'column.jpg'
 
 //Globals for tracking score
-let currentScore
+let currentScore = 0
 let bestScore = 0
 
 //Functions
@@ -29,42 +29,46 @@ const updateScore = () => {
   if (currentScore > bestScore) {
     bestScore = currentScore
   }
+  //Update Scores
+  document.getElementById('best-score').innerHTML = `Best : ${bestScore}`
+  document.getElementById(
+    'current-score'
+  ).innerHTML = `Current : ${currentScore}`
 }
 
 function animate() {
-  currentScore = 0 //current score always initialized to zero at start of game
+  //currentScore = 0 //current score always initialized to zero at start of game
   //ctx.fillRect(10, canvas.height - 90, 50, 50)
 
   //console.log(gamePlaying)
   if (gamePlaying) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    handleObstacles(currentScore)
+    currentScore = handleObstacles(currentScore)
+    console.log(currentScore)
     harry.update()
     harry.draw()
     handleCollisions()
-    requestAnimationFrame(animate) //consider redoing for hogwarts backdrop
+    requestAnimationFrame(animate)
     frame++
-    //console.log(currentScore)
     updateScore()
+  } else if (gamePlaying == false) {
+
+    requestAnimationFrame(animate)
+    obstaclesArray = []
+    currentScore = 0
+    gamePlaying = true
   }
 }
 
 animate()
 
-//Update Scores
-document.getElementById('best-score').innerHTML = `Best : ${bestScore}`
-document.getElementById('current-score').innerHTML = `Current : ${currentScore}`
-
 ///Menu Event Listeners
 buttons[1].addEventListener('click', (gamePlaying) => {
   gamePlaying = true
-  //console.log(`I'm working! ${gamePlaying}`)
-
-  // return gamePlaying
 })
 buttons[0].addEventListener('click', () => {
   gameDirections = true
-  console.log('Place Directions Here')
+  alert('Click the SPACE bar to move our hero up and down over the obstacles.')
 })
 
 //Window Event Listeners

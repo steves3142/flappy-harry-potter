@@ -1,4 +1,4 @@
-const obstaclesArray = []
+let obstaclesArray = []
 
 class Obstacle {
   constructor() {
@@ -52,7 +52,9 @@ function pointAccumulator(arg) {
   }
 }
 
-function handleObstacles(currentScore) {
+function handleObstacles(value) {
+  let accrue = 0
+  accrue += value
   //Add new obstacle for every 50 frames
   //Toggle frame to change difficulty level
   if (frame % 50 === 0) {
@@ -64,7 +66,7 @@ function handleObstacles(currentScore) {
     let temp = 0
     element.update() //rectangle will be drawn
     temp = pointAccumulator(element) //Did the player pass the obstacle?
-    currentScore += temp
+    accrue += temp
     console.log(element.scoreRecorded)
     console.log(currentScore)
   })
@@ -75,6 +77,7 @@ function handleObstacles(currentScore) {
   //Check bird-rectangle collision by checking edges
   //calculate the distance of each object to bird
   //calculate the distance of each object's corner to each bird
+  return accrue;
 }
 
 function handleCollisions() {
