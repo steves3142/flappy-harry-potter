@@ -5,29 +5,34 @@
         <title>Flappy Harry Potter</title>
         <link rel="stylesheet" href="style.css">
     </head>
-
+    <header>
+        <img class = "cover" src="cover.jpg" style="transform: scaleX(1);">
+    </header>
     <body>
-        <div>
-            <img class = "cover" src="cover.jpg" style="transform: scaleX(1);">
-            <h1>Flappy Harry Potter</h1>
-            <div class ="scores">
-                <div id = "best-score"></div>
-                <div id = "current-score"></div>
+        <div class="div-container">
+            <div class = "test">
+        </div>
+    
+
+            <div class = "background-images">
+                <h1>Flappy Harry Potter</h1>
+                <div class ="scores">
+                    <div id = "best-score"></div>
+                    <div id = "current-score"></div>
+                </div>
+                <div class ="button-container">
+                    <button>Click for Instructions</button>
+                    <button>Click to Start</button>
+                </div>
+                <img src="castle.jpg" style="transform: translate(0px, 0px)">
+                <img src="castle.jpg" style="transform: translate(-1px, 0px) scaleX(-1);" >
+                <img src="castle.jpg" style="transform: translate(-1px, 0px);">
+                <img src="castle.jpg" style="transform: translate(-1px, 0px) scaleX(-1);" >
+                
             </div>
+            <canvas id="canvas1"></canvas>
         </div>
 
-        <div class ="button-container">
-            <button>Click for Instructions</button>
-            <button>Click to Start</button>
-        </div>
-        <div class = "background-images">
-            <img src="castle.jpg" style="transform: translate(0px, 0px)">
-            <img src="castle.jpg" style="transform: translate(-1px, 0px) scaleX(-1);" >
-            <img src="castle.jpg" style="transform: translate(-1px, 0px);">
-            <img src="castle.jpg" style="transform: translate(-1px, 0px) scaleX(-1);" >
-            
-        </div>
-        <canvas id="canvas1"></canvas>
         <script src="bird.js"></script>
         <script src="obstacles.js"></script>
         <script src="main.js"></script>
