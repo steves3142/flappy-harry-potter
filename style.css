@@ -11,6 +11,8 @@
 }
 
 h1 {
+    color: rgb(255, 255, 255);
+    font-size: 150%;
     position: absolute;
     top: 22%;
     justify-content: center;
@@ -18,6 +20,8 @@ h1 {
 }
 
 #best-score {
+    color: white; 
+    font-size: 150px;
     position: absolute;
     top: 31%;
     left: 2%;
@@ -27,6 +31,8 @@ h1 {
 }
 
 #current-score {
+    color: white;
+    font-size: 150px;
     position: absolute;
     top: 31%;
     right: 2%;
