@@ -39,4 +39,6 @@ Play as Harry Potter in this EPIC game as you maneuver him on his broom stick ar
 ##### Resource: https://www.w3schools.com/tags/ref_canvas.asp 
 
 ##### Resource: https://www.youtube.com/watch?v=lGJ9i6CYKyQ&t=1950s 
+
+##### Resource: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
 ---
